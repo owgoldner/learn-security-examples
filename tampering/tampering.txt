@@ -1,0 +1,5 @@
+The vulnerability is that a user can insert HTML script into the page through the register form,
+since the site just displays the given name in the document's HTML. This is solved by sanitizing
+the input, where we replace any &, <, and > symbols with the non-code version of them.
+
+Tampering violates the integrity principle.

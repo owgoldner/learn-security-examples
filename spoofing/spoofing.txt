@@ -1,1 +1,10 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The session id in the cookie is saved on the user's browser and available across all sites during their current session.
+This means another site can steal the session id. Also, another site can send a request to the insecure site, which will
+automatically send that cookie which may result in secure information being sent back.
+
+The secure version prevents against these issues by making the session id cookie same site only, so it isn't used on other
+sites, and httpOnly, so other sites cannot programmatically access the cookie information.
+
+This violates confidentiality.

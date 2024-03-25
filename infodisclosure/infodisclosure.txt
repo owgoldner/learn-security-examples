@@ -1,3 +1,12 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 Which CIA property does tampering violate?
 What additional security mechanisms can you incorporate?
+
+An attacker can inject NoSQL queries into the request to retrieve user info without knowing
+the username. This is solved by requiring the username to be a string and sanitizing that string
+by removing non-alphanumeric characters to prevent injection.
+
+This violates integrity.
+
+An additional security mechanism to incorporate is encrypting sensitive data so that even if it is leaked,
+the attacker would not gain as much useful information.
