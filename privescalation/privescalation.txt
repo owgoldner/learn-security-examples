@@ -1,0 +1,5 @@
+If an attacker figures out/guesses the id of an admin in the user database, they just have to send a post
+request with that id and they can update roles of any users. To solve this, we enforce session management
+so that a user must be logged in to their account in order to successfully update roles if they have admin
+powers. You could also incorporate 2-factor authentication in case an admin's password has been leaked. You
+also want to make sure the session management is secure against spoofing.

@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The logging in the insecure server may not be secure, and there is no other implementation to keep track
+of requests. For example, an attacker could crash the server through a DOS attack, and then if the server
+is rebooted prior logging through console.log may be lost. The secure version prevents this by saving logs
+to the server file system during important events like requests, errors, and authentication. Additionally,
+we can ensure the log file is secured and immune to tampering. You might also want some mechanism like clearing
+old logs to another system to avoid running out of space. Also implement an automated auditing process to look
+for suspicious behavior in the logs.

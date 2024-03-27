@@ -1,2 +1,6 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability is that sending invalid input as id in the request can cause the server to crash.
+The secure version solves this by using a try-catch block to catch invalid input. Another security
+mechanism to help protect against DOS attacks is a rate limit middleware.
